@@ -8,6 +8,7 @@ internal class Program
         var bob = new Person();
         WriteLine(bob.ToString());
         bob.Name = "Bob";
+        
 
         bob.FavoriteAncientWonder = WondersOfTheAncientWorld.StatueOfZeusAtOlimpia;
         WriteLine(format: "{0}'s Favorite wonder is {1}. It's integer is {2}.",
@@ -58,10 +59,34 @@ internal class Program
         WriteLine(format: "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
         arg0: gunny.Name,
         arg1: gunny.HomePlanet,
-        arg2: gunny.Instantiated);  
+        arg2: gunny.Instantiated);
 
-         (string, int) fruit = bob.GetFruit();
-         WriteLine($"{fruit.Item1}, {fruit.Item2} there are.");
+        (string, int) fruit = bob.GetFruit();
+        WriteLine($"{fruit.Item1}, {fruit.Item2} there are.");
+
+        WriteLine(bob.SayHello());
+        WriteLine(bob.SayHello("Sona"));
+        WriteLine(bob.OptionalParameters());
+        WriteLine(bob.OptionalParameters("Walk!", 5, false));
+        WriteLine(bob.OptionalParameters(number: 8.8, active: false));
+        
+        var sam = new Person
+        {
+          Name = "Sam",
+          DateOfBirth = new DateTime(1972,1,27)      
+          };
+          WriteLine(sam.Origin);
+          WriteLine(sam.Greeting);
+          WriteLine(sam.Age);
+
+          sam.FavoriteIceCream = "Chocolate Fudge";
+          WriteLine ($"Sam's favorite ice-cream flavor is {sam.FavoriteIceCream}");
+          sam.FavoritePrimaryColor = "Red";
+          WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}");
+ 
+
+
+
 
     }
 }
