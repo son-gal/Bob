@@ -32,12 +32,21 @@ namespace Packt.Shared
                 throw new System.ArgumentException(
                     $"{value} is not a primory color." +
                     "Choose from: red, green, blue.");
-            
-
-
              }
             }
         }
+         public Person this[int index]
+         {
+            get 
+            {
+                return Children [index];
+            }
+
+            set 
+            {
+                Children [index] = value;
+            }
+         }
     }
 
 }
