@@ -8,7 +8,7 @@ internal class Program
         var bob = new Person();
         WriteLine(bob.ToString());
         bob.Name = "Bob";
-        
+
 
         bob.FavoriteAncientWonder = WondersOfTheAncientWorld.StatueOfZeusAtOlimpia;
         WriteLine(format: "{0}'s Favorite wonder is {1}. It's integer is {2}.",
@@ -69,32 +69,42 @@ internal class Program
         WriteLine(bob.OptionalParameters());
         WriteLine(bob.OptionalParameters("Walk!", 5, false));
         WriteLine(bob.OptionalParameters(number: 8.8, active: false));
-        
+
         var sam = new Person
         {
-          Name = "Sam",
-          DateOfBirth = new DateTime(1972,1,27)      
-          };
-          WriteLine(sam.Origin);
-          WriteLine(sam.Greeting);
-          WriteLine(sam.Age);
+            Name = "Sam",
+            DateOfBirth = new DateTime(1972, 1, 27)
+        };
+        WriteLine(sam.Origin);
+        WriteLine(sam.Greeting);
+        WriteLine(sam.Age);
 
-          sam.FavoriteIceCream = "Chocolate Fudge";
-          WriteLine ($"Sam's favorite ice-cream flavor is {sam.FavoriteIceCream}");
-          sam.FavoritePrimaryColor = "Red";
-          WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}");
-
-
-          sam.Children.Add(new Person{Name = "Charlie"});
-          sam.Children.Add(new Person{Name = "Ella"});
-          WriteLine($"Sam's first child is {sam.Children[0].Name}");
-          WriteLine($"Sam's second child is {sam.Children[1].Name}");
-          WriteLine($"Sam's first child is {sam[0].Name}");
-          WriteLine($"Sam's second child is {sam[1].Name}");
- 
+        sam.FavoriteIceCream = "Chocolate Fudge";
+        WriteLine($"Sam's favorite ice-cream flavor is {sam.FavoriteIceCream}");
+        sam.FavoritePrimaryColor = "Red";
+        WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}");
 
 
+        sam.Children.Add(new Person { Name = "Charlie" });
+        sam.Children.Add(new Person { Name = "Ella" });
+        WriteLine($"Sam's first child is {sam.Children[0].Name}");
+        WriteLine($"Sam's second child is {sam.Children[1].Name}");
+        WriteLine($"Sam's first child is {sam[0].Name}");
+        WriteLine($"Sam's second child is {sam[1].Name}");
 
+        Employee john = new Employee
+        {
+            Name = "John Jones",
+            DateOfBirth = new DateTime(1990, 7, 28)
+        };
+
+        john.HireDate = new DateTime(2014, 11, 23);
+        john.WriteToConsole();
+        john.EmployeeCode = "JJ001";
+        WriteLine($"{john.Name} was hired on {john.HireDate:dd/MM/yy}");
+
+        WriteLine(john.ToString());
+        WriteLine(bob.ToString());
 
     }
 }

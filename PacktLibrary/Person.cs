@@ -40,11 +40,19 @@ public partial class Person
     {
         return string.Format(
          format: "command is {0}, number is {1}, active {2}",
-         arg0: command, 
-         arg1: number, 
+         arg0: command,
+         arg1: number,
          arg2: active);
-         
 
+
+    }
+    public void WriteToConsole()
+    {
+        Console.WriteLine($"{Name} was born on a {DateOfBirth:dddd}.");
+    }
+    public override string ToString()
+    {
+        return $"{Name} is a {base.ToString()}";
     }
 
 }

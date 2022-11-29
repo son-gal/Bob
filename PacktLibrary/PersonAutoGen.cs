@@ -4,49 +4,50 @@ namespace Packt.Shared
     {
         public string Origin
         {
-         get 
-         {
-           return $"{Name} was born on {HomePlanet}";
-         }
+            get
+            {
+                return $"{Name} was born on {HomePlanet}";
+            }
         }
         public string Greeting => $"{Name} says 'Hello!'";
         public int Age => System.DateTime.Today.Year - DateOfBirth.Year;
-        public string? FavoriteIceCream{get; set;}
+        public string? FavoriteIceCream { get; set; }
         private string favoritePrimaryColor;
         public string FavoritePrimaryColor
         {
-            get 
+            get
             {
                 return favoritePrimaryColor;
             }
-            set 
+            set
             {
-             switch (value.ToLower())
-             {
-                case "red":
-                case "green":
-                case "blue":
-                favoritePrimaryColor = value;
-                break;
-                default:
-                throw new System.ArgumentException(
-                    $"{value} is not a primory color." +
-                    "Choose from: red, green, blue.");
-             }
+                switch (value.ToLower())
+                {
+                    case "red":
+                    case "green":
+                    case "blue":
+                        favoritePrimaryColor = value;
+                        break;
+                    default:
+                        throw new System.ArgumentException(
+                            $"{value} is not a primory color." +
+                            "Choose from: red, green, blue.");
+                }
             }
         }
-         public Person this[int index]
-         {
-            get 
+        public Person this[int index]
+        {
+            get
             {
-                return Children [index];
+                return Children[index];
             }
 
-            set 
+            set
             {
-                Children [index] = value;
+                Children[index] = value;
             }
-         }
+        }
+
     }
 
 }
